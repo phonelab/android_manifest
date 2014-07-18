@@ -31,7 +31,7 @@
     <project path="bootable/recovery" name="android_bootable_recovery" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/busybox" name="android_external_busybox" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/zlib" name="android_external_zlib" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/yaffs" name="android_external_yaffs" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/yaffs2" name="android_external_yaffs2" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/pigz" name="android_external_pigz" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/fsck_msdos" name="android_external_fsck_msdos" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/libsepol" name="android_external_libsepol" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
