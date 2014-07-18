@@ -1,47 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-    <remote name="aosp"
-            fetch="https://android.googlesource.com/" />
-    <remote name="github"
-            fetch="git://github.com/phonelab/" />
-    <remote name="phonelab"
-            fetch="ssh://platform@src.phone-lab.org/phonelab/" />
+    <remote name="aosp" fetch="https://android.googlesource.com/" />
+    <remote name="github" fetch="git://github.com/" />
+    <remote name="phonelab" fetch="ssh://platform@src.phone-lab.org/" />
+    <remote name="kernel" fetch="https://git.kernel.org/" />
 
     <default revision="refs/tags/android-4.4.4_r1"
             remote="aosp"
             sync-j="8" />
 
     <!-- phonelab private repos -->
-    <project path="vendor/external" name="vendor/external" remote="phonelab" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="vendor/external" name="phonelab/vendor/external" remote="phonelab" revision="phonelab/android-4.4.4_r1/develop" />
 
     <!-- phonelab specific changes -->
-    <project path="build" name="android_build" remote="github" revision="phonelab/android-4.4.4_r1/develop">
+    <project path="build" name="phonelab/android_build" remote="github" revision="phonelab/android-4.4.4_r1/develop">
         <copyfile src="core/root.mk" dest="Makefile" />
     </project>
-    <project path="device/lge/hammerhead" name="android_device_lge_hammerhead" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
-    <project path="system/core" name="android_system_core" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
-    <project path="frameworks/base" name="android_frameworks_base" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
-    <project path="frameworks/native" name="android_frameworks_native" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
-    <project path="kernel" name="android_kernel" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
-    <project path="system/extras" name="android_system_extras" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="device/lge/hammerhead" name="phonelab/android_device_lge_hammerhead" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="system/core" name="phonelab/android_system_core" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="frameworks/base" name="phonelab/android_frameworks_base" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="frameworks/native" name="phonelab/android_frameworks_native" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="kernel" name="phonelab/android_kernel" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="system/extras" name="phonelab/android_system_extras" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+
+    <!-- additional external repos -->
+    <project path="external/iw" name="pub/scm/linux/kernel/git/jberg/iw" remote="kernel" revision="refs/tags/v3.15" />
 
     <!-- CyanogenMod recovery -->
     <!-- Note: CM now no longer tag their stable releases. Instead, they have a
       stable branch and will merge into that branch every now and then. So we 
       need to mirror their repos and freeze the branch using tags. -->
-    <project path="bootable/recovery" name="android_bootable_recovery" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/busybox" name="android_external_busybox" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/zlib" name="android_external_zlib" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/yaffs2" name="android_external_yaffs2" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/pigz" name="android_external_pigz" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/fsck_msdos" name="android_external_fsck_msdos" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/libsepol" name="android_external_libsepol" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/libselinux" name="android_external_libselinux" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/koush/Superuser" name="Superuser" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/koush/Widgets" name="Widgets" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="system/vold" name="android_system_vold" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="bootable/recovery" name="phonelab/android_bootable_recovery" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/busybox" name="phonelab/android_external_busybox" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/zlib" name="phonelab/android_external_zlib" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/yaffs2" name="phonelab/android_external_yaffs2" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/pigz" name="phonelab/android_external_pigz" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/fsck_msdos" name="phonelab/android_external_fsck_msdos" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/libsepol" name="phonelab/android_external_libsepol" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/libselinux" name="phonelab/android_external_libselinux" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/e2fsprogs" name="phonelab/android_external_e2fsprogs" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/koush/Superuser" name="phonelab/Superuser" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/koush/Widgets" name="phonelab/Widgets" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="system/vold" name="phonelab/android_system_vold" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
 
     <!-- AOSP repos -->
     <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
