@@ -5,7 +5,7 @@
             fetch=".." />
     <remote name="github"
             fetch="git@github.com:phonelab/" />
-    <remove name="phonelab"
+    <remote name="phonelab"
             fetch="ssh://platform@src.phone-lab.org/phonelab/" />
 
     <default revision="refs/tags/android-4.4.4_r1"
