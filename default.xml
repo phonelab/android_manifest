@@ -25,6 +25,9 @@
     <project path="system/extras" name="android_system_extras" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
 
     <!-- CyanogenMod recovery -->
+    <!-- Note: CM now no longer tag their stable releases. Instead, they have a
+      stable branch and will merge into that branch every now and then. So we 
+      need to mirror their repos and freeze the branch using tags. -->
     <project path="bootable/recovery" name="android_bootable_recovery" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/busybox" name="android_external_busybox" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
     <project path="external/zlib" name="android_external_zlib" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
