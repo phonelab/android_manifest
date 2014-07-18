@@ -3,13 +3,41 @@
 
     <remote  name="aosp"
             fetch=".." />
+    <remote name="github"
+            fetch="git@github.com:phonelab/" />
+    <remove name="phonelab"
+            fetch="ssh://platform@src.phone-lab.org/phonelab/" />
+
     <default revision="refs/tags/android-4.4.4_r1"
             remote="aosp"
-            sync-j="4" />
+            sync-j="8" />
 
-    <project path="build" name="platform/build" groups="pdk" >
-        <copyfile src="core/root.mk" dest="Makefile" />
-    </project>
+    <!-- phonelab private repos -->
+    <project path="vendor/external" name="vendor/external" remote="phonelab" revision="phonelab/android-4.4.4_r1/develop" />
+
+    <!-- phonelab specific changes -->
+    <project path="device/lge/hammerhead" name="android_build" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="build" name="android_build" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="system/core" name="android_system_core" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="frameworks/base" name="android_frameworks_base" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="kernel" name="android_kernel" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <project path="system/extras" name="android_system_extras" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+
+    <!-- CyanogenMod recovery -->
+    <project path="bootable/recovery" name="android_bootable_recovery" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/busybox" name="android_external_busybox" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/zlib" name="android_external_zlib" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/yaffs" name="android_external_yaffs" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/pigz" name="android_external_pigz" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/fsck_msdos" name="android_external_fsck_msdos" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/libsepol" name="android_external_libsepol" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/libselinux" name="android_external_libselinux" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/e2fsprogs" name="android_external_e2fsprogs" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/koush/Superuser" name="Superuser" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="external/koush/Widgets" name="Widgets" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+    <project path="system/vold" name="android_system_vold" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+
+    <!-- AOSP repos -->
     <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
     <project path="art" name="platform/art" />
     <project path="bionic" name="platform/bionic" groups="pdk" />
@@ -23,11 +51,6 @@
     <project path="developers/docs" name="platform/developers/docs" />
     <project path="developers/samples/android" name="platform/developers/samples/android" />
     <project path="development" name="platform/development" />
-    <project path="device/asus/deb" name="device/asus/deb" groups="device,flo" />
-    <project path="device/asus/flo" name="device/asus/flo" groups="device,flo" />
-    <project path="device/asus/flo-kernel" name="device/asus/flo-kernel" groups="device,flo" />
-    <project path="device/asus/grouper" name="device/asus/grouper" groups="device,grouper" />
-    <project path="device/asus/tilapia" name="device/asus/tilapia" groups="device,grouper" />
     <project path="device/common" name="device/common" />
     <project path="device/generic/armv7-a-neon" name="device/generic/armv7-a-neon" groups="pdk" />
     <project path="device/generic/common" name="device/generic/common" groups="pdk" />
@@ -39,12 +62,8 @@
     <project path="device/generic/x86" name="device/generic/x86" groups="pdk" />
     <project path="device/google/accessory/arduino" name="device/google/accessory/arduino" groups="device" />
     <project path="device/google/accessory/demokit" name="device/google/accessory/demokit" groups="device" />
-    <project path="device/lge/hammerhead" name="device/lge/hammerhead" groups="device,hammerhead" />
     <project path="device/lge/hammerhead-kernel" name="device/lge/hammerhead-kernel" groups="device,hammerhead" />
-    <project path="device/lge/mako" name="device/lge/mako" groups="device,mako" />
-    <project path="device/lge/mako-kernel" name="device/lge/mako-kernel" groups="device,mako" />
     <project path="device/sample" name="device/sample" groups="pdk" />
-    <project path="device/samsung/manta" name="device/samsung/manta" groups="device,manta" />
     <project path="docs/source.android.com" name="platform/docs/source.android.com" />
     <project path="external/aac" name="platform/external/aac" groups="pdk" />
     <project path="external/android-clat" name="platform/external/android-clat" />
@@ -100,7 +119,6 @@
     <project path="external/doclava" name="platform/external/doclava" />
     <project path="external/dropbear" name="platform/external/dropbear" />
     <project path="external/droiddriver" name="platform/external/droiddriver" />
-    <project path="external/e2fsprogs" name="platform/external/e2fsprogs" groups="pdk" />
     <project path="external/easymock" name="platform/external/easymock" />
     <project path="external/eclipse-basebuilder" name="platform/external/eclipse-basebuilder" />
     <project path="external/eclipse-windowbuilder" name="platform/external/eclipse-windowbuilder" />
@@ -114,7 +132,6 @@
     <project path="external/fdlibm" name="platform/external/fdlibm" />
     <project path="external/flac" name="platform/external/flac" groups="pdk" />
     <project path="external/freetype" name="platform/external/freetype" groups="pdk" />
-    <project path="external/fsck_msdos" name="platform/external/fsck_msdos" />
     <project path="external/ganymed-ssh2" name="platform/external/ganymed-ssh2" />
     <project path="external/gcc-demangle" name="platform/external/gcc-demangle" groups="pdk" />
     <project path="external/genext2fs" name="platform/external/genext2fs" />
@@ -158,8 +175,6 @@
     <project path="external/libphonenumber" name="platform/external/libphonenumber" />
     <project path="external/libpng" name="platform/external/libpng" groups="pdk" />
     <project path="external/libppp" name="platform/external/libppp" />
-    <project path="external/libselinux" name="platform/external/libselinux" groups="pdk" />
-    <project path="external/libsepol" name="platform/external/libsepol" groups="pdk" />
     <project path="external/libssh2" name="platform/external/libssh2" />
     <project path="external/libusb" name="platform/external/libusb" />
     <project path="external/libusb-compat" name="platform/external/libusb-compat" />
@@ -238,11 +253,8 @@
     <project path="external/wpa_supplicant_8" name="platform/external/wpa_supplicant_8" groups="pdk" />
     <project path="external/xmlwriter" name="platform/external/xmlwriter" />
     <project path="external/xmp_toolkit" name="platform/external/xmp_toolkit" />
-    <project path="external/yaffs2" name="platform/external/yaffs2" groups="pdk" />
-    <project path="external/zlib" name="platform/external/zlib" groups="pdk" />
     <project path="external/zxing" name="platform/external/zxing" />
     <project path="frameworks/av" name="platform/frameworks/av" groups="pdk" />
-    <project path="frameworks/base" name="platform/frameworks/base" />
     <project path="frameworks/compile/libbcc" name="platform/frameworks/compile/libbcc" groups="pdk" />
     <project path="frameworks/compile/mclinker" name="platform/frameworks/compile/mclinker" groups="pdk" />
     <project path="frameworks/compile/slang" name="platform/frameworks/compile/slang" groups="pdk" />
@@ -415,12 +427,9 @@
     <project path="prebuilts/sdk" name="platform/prebuilts/sdk" groups="pdk" />
     <project path="prebuilts/tools" name="platform/prebuilts/tools" groups="pdk,tools" />
     <project path="sdk" name="platform/sdk" />
-    <project path="system/core" name="platform/system/core" groups="pdk" />
-    <project path="system/extras" name="platform/system/extras" groups="pdk" />
     <project path="system/media" name="platform/system/media" groups="pdk" />
     <project path="system/netd" name="platform/system/netd" groups="pdk" />
     <project path="system/security" name="platform/system/security" groups="pdk" />
-    <project path="system/vold" name="platform/system/vold" groups="pdk" />
     <project path="tools/adt/eclipse" name="platform/tools/adt/eclipse" groups="notdefault,tools" />
     <project path="tools/adt/idea" name="platform/tools/adt/idea" groups="notdefault,tools" />
     <project path="tools/base" name="platform/tools/base" groups="notdefault,tools" />
