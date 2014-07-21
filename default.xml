@@ -30,19 +30,19 @@
     <!-- CyanogenMod recovery
       Note: CM now no longer tag their stable releases. Instead, they have a
       stable branch and will merge into that branch every now and then. So we 
-      need to mirror their repos and freeze the branch using tags. -->
-    <project path="bootable/recovery" name="phonelab/android_bootable_recovery" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/busybox" name="phonelab/android_external_busybox" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/zlib" name="phonelab/android_external_zlib" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/yaffs2" name="phonelab/android_external_yaffs2" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/pigz" name="phonelab/android_external_pigz" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/fsck_msdos" name="phonelab/android_external_fsck_msdos" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/libsepol" name="phonelab/android_external_libsepol" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/libselinux" name="phonelab/android_external_libselinux" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/e2fsprogs" name="phonelab/android_external_e2fsprogs" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/koush/Superuser" name="phonelab/Superuser" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="external/koush/Widgets" name="phonelab/Widgets" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
-    <project path="system/vold" name="phonelab/android_system_vold" remote="github" revision="refs/tags/phonelab/android-4.4.4_r1/recovery" />
+      ref to a specific commit id.  -->
+    <project path="bootable/recovery" name="CyanogenMod/android_bootable_recovery" remote="github"             revision="fe2ad058ea11173eae022bedf2cc052bf2bd5d35" />
+    <project path="external/busybox" name="CyanogenMod/android_external_busybox" remote="github"               revision="e64e94db902d3a0d5fb8e431b0aeb0be0d8f6151" />
+    <project path="external/zlib" name="CyanogenMod/android_external_zlib" remote="github"                     revision="976269481dd7f8652248774052221709e873b910" />
+    <project path="external/yaffs2" name="CyanogenMod/android_external_yaffs2" remote="github"                 revision="03a490214dc2ac29104ed10b29659d9585a6a5f2" />
+    <project path="external/pigz" name="CyanogenMod/android_external_pigz" remote="github"                     revision="14a54a40beae74f419ea289ac84404b5f4b72684" />
+    <project path="external/fsck_msdos" name="CyanogenMod/android_external_fsck_msdos" remote="github"         revision="d10e31b579d487e459183cbc004e844a8de20379" />
+    <project path="external/libsepol" name="CyanogenMod/android_external_libsepol" remote="github"             revision="31329f9e50e441ac31b9c193308d41b19fbdea47" />
+    <project path="external/libselinux" name="CyanogenMod/android_external_libselinux" remote="github"         revision="ae0070fc7efdf52567eab1b13ab3249dfe4ac59a" />
+    <project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" remote="github"           revision="650530dbed28fe4c2f8f499177a6b27170acfd51" />
+    <project path="external/koush/Superuser" name="CyanogenMod/Superuser" remote="github"                      revision="96afaf893eea1a97f28a78ceb0bf3a390e79549e" />
+    <project path="external/koush/Widgets" name="CyanogenMod/Widgets" remote="github"                          revision="2cc45f35f51445015edda6063b84e0beff532b2d" />
+    <project path="system/vold" name="CyanogenMod/android_system_vold" remote="github"                         revision="84aa7ed0171f5f64ba58d2d785a39004a7ba2886" />
 
     <!-- AOSP repos -->
     <project path="abi/cpp" name="platform/abi/cpp" groups="pdk" />
@@ -51,6 +51,8 @@
     <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
     <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
     <project path="cts" name="platform/cts" groups="cts" />
+    g.e(TAG, Log.getStackTraceString(e));
+
     <project path="dalvik" name="platform/dalvik" />
     <project path="developers/build" name="platform/developers/build" />
     <project path="developers/demos" name="platform/developers/demos" />
