@@ -22,7 +22,10 @@
     <project path="frameworks/base" name="phonelab/android_frameworks_base" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
     <project path="frameworks/native" name="phonelab/android_frameworks_native" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
     <project path="kernel" name="phonelab/android_kernel" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <!-- system/extras/su was deleted, cause conflict with Supersu -->
     <project path="system/extras" name="phonelab/android_system_extras" remote="github" revision="phonelab/android-4.4.4_r1/develop" />
+    <!-- Need to fix su binary update bug in supersu -->
+    <project path="external/koush/Superuser" name="phonelab/Superuser" remote="github"  revision="phonelab/android-4.4.4_r1/develop" />
 
     <!-- additional external repos -->
     <project path="external/iw" name="pub/scm/linux/kernel/git/jberg/iw" remote="kernel" revision="refs/tags/v3.15" />
@@ -40,7 +43,6 @@
     <project path="external/libsepol" name="CyanogenMod/android_external_libsepol" remote="github"             revision="31329f9e50e441ac31b9c193308d41b19fbdea47" />
     <project path="external/libselinux" name="CyanogenMod/android_external_libselinux" remote="github"         revision="ae0070fc7efdf52567eab1b13ab3249dfe4ac59a" />
     <project path="external/e2fsprogs" name="CyanogenMod/android_external_e2fsprogs" remote="github"           revision="650530dbed28fe4c2f8f499177a6b27170acfd51" />
-    <project path="external/koush/Superuser" name="CyanogenMod/Superuser" remote="github"                      revision="96afaf893eea1a97f28a78ceb0bf3a390e79549e" />
     <project path="external/koush/Widgets" name="CyanogenMod/Widgets" remote="github"                          revision="2cc45f35f51445015edda6063b84e0beff532b2d" />
     <project path="system/vold" name="CyanogenMod/android_system_vold" remote="github"                         revision="84aa7ed0171f5f64ba58d2d785a39004a7ba2886" />
 
