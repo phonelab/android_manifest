@@ -53,8 +53,6 @@
     <project path="bootable/bootloader/legacy" name="platform/bootable/bootloader/legacy" />
     <project path="bootable/diskinstaller" name="platform/bootable/diskinstaller" />
     <project path="cts" name="platform/cts" groups="cts" />
-    g.e(TAG, Log.getStackTraceString(e));
-
     <project path="dalvik" name="platform/dalvik" />
     <project path="developers/build" name="platform/developers/build" />
     <project path="developers/demos" name="platform/developers/demos" />
